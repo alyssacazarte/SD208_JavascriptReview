@@ -102,7 +102,7 @@ export class ParkingAllocationSystem {
 
         let totalPayable = this.compute ( p.psize.value, diff )
         console.log("\n");
-        console.log ( `Total charges: P ${totalPayable}`)
+        console.log ( `Total Parked Vehicle Charges : ₱ ${totalPayable}.00`)
         // Reset parking slot
         Object.assign(this.PARK[row][col], {
             occupied: false,
