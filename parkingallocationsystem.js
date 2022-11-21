@@ -30,7 +30,7 @@ rl.on('line', (line) => {
         break
       case 'park':
         console.log("\n");
-        rl.question('Vehicle Size [ 0-S, 1-M, 2-L ]: ', function ( v ) {
+        rl.question('Types of Vehicles [ 0-S, 1-M, 2-L ]: ', function ( v ) {
             let strEntrance = parking.ENTRANCE.map( (e) => e.name).join(',')
             console.log("\n");
             rl.question(`Entry Points  [${strEntrance}]: `, function (entrance) {
