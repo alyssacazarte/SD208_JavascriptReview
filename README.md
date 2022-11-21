@@ -53,5 +53,6 @@ You are free to design the system in any pattern you wish. However, take note th
 Please develop in either ReacJS or NodeJS. You will be required to explain your approach during the interview. Have fun!
 
 Members:
-Alyssa Cazarte
+Alyssa Cazarte  
+and
 Anna Mae Jorge
