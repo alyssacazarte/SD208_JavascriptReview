@@ -80,7 +80,3 @@ rl.on('line', (line) => {
 
   });
 
-rl.on("close", function () {
-    console.log("\nThank you! We are pleased to serve you.")
-    process.exit(0)
-})
