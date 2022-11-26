@@ -6,13 +6,10 @@ export class ParkingAllocationSystem {
         this.MAX_COLS = 8
         this.MAX_ROWS = 5
 
-        // Initialize our parking slots
         this.PARK = new Array(this.MAX_ROWS).fill(null).map( () => new Array(this.MAX_COLS).fill(null) )
-
-        // Initialize our parking spaces with random data
         this.initSpaces()
 
-        // Let's define our entrance points
+
         this.ENTRANCE = [
             {name: 'A', row: 0, col: 2},
             {name: 'B', row: 0, col: 6},
@@ -38,12 +35,12 @@ export class ParkingAllocationSystem {
         let nrow = -1, ncol = -1
         let distance = 9999
 
-        // Search for the nearest parking space
+  
         for ( let i=0; i<this.MAX_ROWS; i++ ) {
             for ( let j=0; j<this.MAX_COLS; j++ ) {
                 if ( !this.isGateway(i,j) ) {
                     let p = this.PARK[i][j]
-                    if ( size <= p.psize.value ) { // Check if vehicle fits in parking slot
+                    if ( size <= p.psize.value ) { 
                         let computedDistance = Math.abs( entrance.row - p.row ) + Math.abs ( entrance.col - p.col )
                         if ( distance > computedDistance && !p.occupied ) {
                             distance = computedDistance
@@ -55,7 +52,7 @@ export class ParkingAllocationSystem {
             }
         }
 
-        if ( nrow == -1 ) { // No parking slot found
+        if ( nrow == -1 ) { 
             console.log ( 'No parking slot found' )
             return false
         } else {
@@ -103,7 +100,6 @@ export class ParkingAllocationSystem {
         let totalPayable = this.compute ( p.psize.value, diff )
         console.log("\n");
         console.log ( `Total Parked Vehicle Charges : ₱ ${totalPayable}.00`)
-        // Reset parking slot
         Object.assign(this.PARK[row][col], {
             occupied: false,
             vsize: null,
@@ -151,7 +147,6 @@ export class ParkingAllocationSystem {
             charges += remainingHours * hourlyCharge
         }
 
-        // return total charges
         return charges
 
     }
